@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.container {
+  background-color: black;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(70, 123, 169);
+  background-image: url(""); /* Nếu muốn dùng hình nền thì thêm URL */
+}
+
+#imgLogo {
+  width: 100px;
+  height: 80px;
+  padding-left: 20px;
+}
+
+#imgFind {
+  width: 40px;
+  height: 20px;
+  padding-right: 20px;
+}
+
+.navbar {
+  background-color: #c05700;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.menu > li {
+  width: 10%;
+  padding: 15px 15px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-self: start;
+}
+
+.menu > li:hover {
+  background-color: #a34700;
+}
+
+.menu > li.has-dropdown:hover .dropdown {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  background-color: #111;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+  z-index: 1000;
+}
+
+.column {
+  flex: 1 1 12%;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.column a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 0;
+}
+
+.column a:hover {
+  color: orange;
+}
+
+.arrow {
+  font-size: 12px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.type {
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  gap: 3px;
+  width: 100%;
+}
+
+.title {
+  font-family: "Poppins", sans-serif;
+  font-size: 26px;
+  color: #ffffff;
+  text-align: left;
+  margin: 10px 0;
+}
+
+.manga-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding: 10px;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.manga-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.manga-card {
+  flex: 0 0 auto;
+  width: 140px;
+  background: #333;
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.manga-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.manga-card p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  background-color: aquamarine;
+  width: 100%;
+}
+
+.contactInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.contact-left {
+  width: 50%;
+  padding: 6px 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact h2 {
+  text-align: center;
+  color: brown;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
