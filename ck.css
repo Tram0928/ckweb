@@ -34,7 +34,6 @@
 #imgFind {
   width: 40px;
   height: 20px;
-  padding-right: 20px;
 }
 
 .navbar {
@@ -45,20 +44,33 @@
 .menu {
   display: flex;
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding-left: 10px;
+  padding-right: 30px;
   width: 100%;
   justify-content: center;
+  text-align: center;
   flex-wrap: wrap;
+  z-index: 2;
 }
 
+.menu ul {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
 .menu > li {
   width: 10%;
-  padding: 15px 15px;
+  padding: 0;
   color: white;
   cursor: pointer;
+  font-size: large;
   display: flex;
-  justify-self: start;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .menu > li:hover {
@@ -190,4 +202,14 @@
   width: 100%;
   margin-top: 20px;
   margin-bottom: 30px;
+}
+
+.findManga {
+  background-color: rgb(156, 21, 59);
+  border-radius: 30px;
+  width: 50px;
+  height: auto;
+  padding: 5px;
+  margin: 7px;
+  text-align: center;
 }
