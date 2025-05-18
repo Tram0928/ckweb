@@ -5,13 +5,32 @@
 }
 
 .container {
-  background-color: black;
   display: flex;
   margin: 0;
   padding: 0;
   height: auto;
   width: 100%;
   flex-wrap: wrap;
+}
+#bg {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#content {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: 100%;
+  flex-wrap: wrap;
+  position: relative;
+  margin-top: 100px;
+  overflow: auto;
 }
 
 .header {
@@ -21,8 +40,7 @@
   align-items: center;
   width: 100%;
   padding: 10px;
-  background-color: rgb(70, 123, 169);
-  background-image: url(""); /* Nếu muốn dùng hình nền thì thêm URL */
+  background-color: transparent;
 }
 
 #imgLogo {
@@ -31,14 +49,11 @@
   padding-left: 20px;
 }
 
-#imgFind {
-  width: 40px;
-  height: 20px;
-}
-
 .navbar {
-  background-color: #c05700;
+  background-color: #06171d;
   width: 100%;
+  position: relative;
+  z-index: 99999;
 }
 
 .menu {
@@ -60,6 +75,7 @@
   justify-content: center;
   align-items: center;
   list-style-type: none;
+  position: relative;
 }
 .menu > li {
   width: 10%;
@@ -70,50 +86,94 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-}
-
-.menu > li:hover {
-  background-color: #a34700;
-}
-
-.menu > li.has-dropdown:hover .dropdown {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  text-align: left;
 }
 
 .dropdown {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
-  width: 100vw;
-  background-color: #111;
-  padding: 20px 40px;
-  flex-wrap: wrap;
+  left: 20%;
+  background-color: rgba(72, 70, 68, 0.5);
+  padding: 20px;
   z-index: 1000;
+  width: 800px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border: 2px;
+}
+.menu > li.has-dropdown {
+  position: relative;
 }
 
+.menu > li.has-dropdown:hover .dropdown {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu > li.has-dropdown:hover .dropdownCountry {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdownCountry {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 20%;
+  background-color: rgba(72, 70, 68, 0.5);
+  padding: 20px;
+  z-index: 1000;
+  width: 300px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border: 2px;
+}
 .column {
-  flex: 1 1 12%;
-  min-width: 120px;
+  width: 150px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  flex-grow: 1;
+  gap: 10px;
 }
 
+.columnCountry {
+  width: 50px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 .column a {
-  color: white;
+  color: rgb(253, 252, 252);
+  text-decoration: none;
+  padding: 5px 0;
+}
+.columnCountry a {
+  color: rgb(253, 252, 252);
   text-decoration: none;
   padding: 5px 0;
 }
 
 .column a:hover {
   color: orange;
+  background-color: rgb(155, 56, 56, 0.5);
+}
+
+.columnCountry a:hover {
+  color: orange;
+  background-color: rgb(155, 56, 56, 0.5);
 }
 
 .arrow {
+  position: relative;
+
   font-size: 12px;
 }
 
@@ -126,8 +186,8 @@
 .type {
   display: flex;
   flex-direction: column;
-  padding: 6px;
-  gap: 3px;
+  padding: 30px;
+  gap: 10px;
   width: 100%;
 }
 
@@ -175,8 +235,189 @@
   margin: 8px 0;
   font-size: 14px;
 }
+/*
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.contact {
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+#container {
+  position: relative;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+}
+
+.navbar {
+  background-color: #06171d;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.menu li {
+  position: relative;
+  margin: 0 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  display: inline-block;
+}
+
+.menu li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+#imgLogo {
+  width: 100px;
+  height: 80px;
+}
+
+.findManga {
+  display: flex;
+  align-items: center;
+}
+
+.inputtext {
+  padding: 5px 10px;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  outline: none;
+}
+
+#imgFind {
+  width: 20px;
+  height: 20px;
+}
+
+.findManga button {
+  background-color: #333;
+  border: none;
+  padding: 6px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.dropdown,
+.dropdownCountry {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(72, 70, 68, 0.95);
+  padding: 20px;
+  z-index: 999;
+  min-width: 600px;
+  display: none;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 4px;
+}
+
+.menu > li.has-dropdown:hover .dropdown,
+.menu > li.has-dropdown:hover .dropdownCountry {
+  display: flex;
+}
+
+.column,
+.columnCountry {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.column a,
+.columnCountry a {
+  color: white;
+  text-decoration: none;
+}
+
+.column a:hover,
+.columnCountry a:hover {
+  color: orange;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+#content {
+  margin-top: 100px;
+  padding: 20px;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1;
+  position: relative;
+}
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Optional Scroll Card Style */
+.manga-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding: 10px;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.manga-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.manga-card {
+  flex: 0 0 auto;
+  width: 200px;
+  background: #333;
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.manga-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.manga-card p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+*/ .contact {
   display: flex;
   flex-direction: column;
   background-color: aquamarine;
@@ -205,11 +446,77 @@
 }
 
 .findManga {
-  background-color: rgb(156, 21, 59);
+  background-color: rgb(217, 214, 215);
   border-radius: 30px;
-  width: 50px;
+  width: 250px;
+  height: 30px;
+  padding: 7px;
+  display: flex;
+  transition: 0.4s;
+}
+
+.inputtext {
+  background: none;
+  border: none;
+  width: 80%;
   height: auto;
-  padding: 5px;
-  margin: 7px;
+  justify-content: center;
+  outline: none;
+  box-shadow: none;
+}
+#imgFind {
+  width: 30px;
+  height: 15px;
+  float: right;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+a button input {
+  outline: none;
+  box-shadow: none;
+}
+
+#movie-header {
+  width: 100%;
+  height: 500px;
+
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: background-image 1s ease-in-out;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 20px;
+}
+.title {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+.description {
+  font-size: 1.5em;
 }

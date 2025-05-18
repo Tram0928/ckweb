@@ -5,208 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cuối Kì</title>
     <link rel="stylesheet" href="ck.css" />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="ck.js"></script>
   </head>
   <body>
-    <div class="container">
-      <div class="header"></div>
-      <div class="content">
-        <div class="navbar">
-          <ul class="menu">
-            <li>
-              <img src="361cb70302853ac1bc0e769a231a5953.png" id="imgLogo" />
-            </li>
-            <li>TRANG CHỦ</li>
-            <li class="has-dropdown">
-              THỂ LOẠI <span class="arrow">▼</span>
-              <div class="dropdown">
-                <div class="column">
-                  <a href="#">Cổ tích</a><a href="#">Adventure</a
-                  ><a href="#">Manga</a><a href="#">Chuyển Sinh</a
-                  ><a href="#">Tiểu thuyết</a>
-                </div>
-                <div class="column">
-                  <a href="#">Lịch sử</a><a href="#">Comic</a
-                  ><a href="#">Hành động</a><a href="#">Detective</a
-                  ><a href="#">Tình cảm</a>
-                </div>
-                <div class="column">
-                  <a href="#">T</a><a href="#">Fantasy</a
-                  ><a href="#">Gender Bender</a><a href="#">Harem</a
-                  ><a href="#">Historical</a>
-                </div>
-                <div class="column">
-                  <a href="#">Horror</a><a href="#">Huyền Huyễn</a
-                  ><a href="#">Isekai</a><a href="#">Josei</a
-                  ><a href="#">Mafia</a>
-                </div>
-                <div class="column">
-                  <a href="#">Magic</a><a href="#">Manga</a
-                  ><a href="#">Manhua</a><a href="#">Manhwa</a
-                  ><a href="#">Martial Arts</a>
-                </div>
-                <div class="column">
-                  <a href="#">Military</a><a href="#">Mystery</a
-                  ><a href="#">Ngôn Tình</a><a href="#">One shot</a
-                  ><a href="#">Psychological</a>
-                </div>
-                <div class="column">
-                  <a href="#">Romance</a><a href="#">School Life</a
-                  ><a href="#">Sci-fi</a><a href="#">Seinen</a
-                  ><a href="#">Shoujo</a>
-                </div>
-                <div class="column">
-                  <a href="#">Shoujo Ai</a><a href="#">Shounen</a
-                  ><a href="#">Shounen Ai</a><a href="#">Slice of life</a
-                  ><a href="#">Sports</a>
-                </div>
-                <div class="column">
-                  <a href="#">Supernatural</a><a href="#">Tragedy</a
-                  ><a href="#">Trọng Sinh</a><a href="#">Truyện Màu</a
-                  ><a href="#">Webtoon</a>
-                </div>
-                <div class="column">
-                  <a href="#">Xuyên Không</a>
-                </div>
+    <div id="container">
+      <div class="navbar">
+        <ul class="menu">
+          <li>
+            <img src="361cb70302853ac1bc0e769a231a5953.png" id="imgLogo" />
+          </li>
+          <li><a href="#" onclick="loadPage('trangchu.html')">TRANG CHỦ</a></li>
+          <li class="has-dropdown">
+            THỂ LOẠI <span class="arrow"></span>
+            <div class="dropdown">
+              <div class="column">
+                <a href="#" onclick="loadPage('cotich.html')">Cổ tích</a>
+                <a href="#">Manga</a>
+                <a href="#">Tiểu thuyết</a>
+                <a href="#">Giả tưởng</a>
               </div>
-            </li>
-            <li>QUỐC GIA</li>
-            <li>TOP TRUYỆN</li>
-            <li>TÁC GIẢ</li>
-            <li>Hỗ trợ</li>
-            <li>Fanpage</li>
-            <li>
-              <div class="findManga">
-                <img src="15732525.png" id="imgFind" />
+              <div class="column">
+                <a href="#">Lịch sử</a>
+                <a href="#">Truyện tranh</a>
+                <a href="#">Hành động</a>
+                <a href="#">Lãng mạn</a>
               </div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="type">
-          <h2 class="title">Danh sách truyện nổi bật</h2>
-          <div class="manga-scroll">
-            <div class="manga-card">
-              <img src="vuluyendienphong.jpg" alt="Vũ Luyện Điên Phong" />
-              <p>Vũ Luyện Điên Phong</p>
+              <div class="column">
+                <a href="#">Manhua</a>
+                <a href="#">Truyện cười</a>
+                <a href="#">Kinh dị</a>
+                <a href="#">Truyện buồn</a>
+              </div>
+              <div class="column">
+                <a href="#">Khoa học</a>
+                <a href="#">Truyện ngắn</a>
+                <a href="#">Truyện dài tập</a>
+                <a href="#">Trinh thám</a>
+              </div>
             </div>
-            <div class="manga-card">
-              <img src="hnhpct.jpg" alt="Hôn Nhân Hạnh Phúc Của Tôi" />
-              <p>Hôn Nhân Hạnh Phúc Của Tôi</p>
+          </li>
+          <li class="has-dropdown">
+            QUỐC GIA
+            <span class="arrow"></span>
+            <div class="dropdownCountry">
+              <div class="columnCountry">
+                <a href="#">Việt Nam</a>
+                <a href="#">Nhật Bản</a>
+                <a href="#">Trung Quốc</a>
+                <a href="#">Hàn Quốc</a>
+              </div>
+              <div class="columnCountry">
+                <a href="#">Thái Lan</a>
+                <a href="#">Bồ Đào Nha</a>
+                <a href="#">Tây Ban Nha</a>
+                <a href="#">Khác</a>
+              </div>
             </div>
-            <div class="manga-card">
-              <img
-                src="td.jpg"
-                alt="Tôi Dựa Vào Làm Ruộng Để Nuôi Sống Toàn Bộ Quân Đoàn"
-              />
-              <p>Tôi Dựa Vào Làm Ruộng Để Nuôi Sống Toàn Bộ Quân Đoàn</p>
+          </li>
+          <li><a href="#" onclick="loadPage('trangchu.html')">TOP ANIME</a></li>
+          <li><a href="#" onclick="loadPage('trangchu.html')">NĂM PH</a></li>
+          <li><a href="#" onclick="loadPage('trangchu.html')">HỖ TRỢ</a></li>
+          <li><a href="#" onclick="loadPage('trangchu.html')">FANPAGE</a></li>
+          <li>
+            <div class="findManga">
+              <input type="text" class="inputtext" placeholder="Tìm kiếm..." />
+              <button onclick="searchManga()">
+                <img src="2989542.png" id="imgFind" />
+              </button>
             </div>
-            <div class="manga-card">
-              <img src="kdd.jpg" alt="Khó Dỗ Dành" />
-              <p>Khó Dỗ Dành</p>
-            </div>
-            <div class="manga-card">
-              <img src="vv.jpg" alt="Vưu Vật" />
-              <p>Vưu Vật</p>
-            </div>
-            <div class="manga-card">
-              <img src="dccd.jpg" alt="Điên Cuồng Cướp Đoạt" />
-              <p>Điên Cuồng Cướp Đoạt</p>
-            </div>
-            <div class="manga-card">
-              <img
-                src="ts.jpg"
-                alt="Trọng Sinh Thành Sủng Vật Của Thái Tử Âm Trầm"
-              />
-              <p>Trọng Sinh Thành Sủng Vật Của Thái Tử Âm Trầm</p>
-            </div>
-            <div class="manga-card">
-              <img src="treunham.jpg" alt="Trêu Nhầm" />
-              <p>Trêu Nhầm</p>
-            </div>
-            <div class="manga-card">
-              <img
-                src="tcv.jpg"
-                alt="Thay Chị Vào Hào Môn, Tôi Được Cưng Chiều Hết Mực [Thập Niên 90]"
-              />
-              <p>
-                Thay Chị Vào Hào Môn, Tôi Được Cưng Chiều Hết Mực [Thập Niên 90]
-              </p>
-            </div>
-            <div class="manga-card">
-              <img src="kc.jpg" alt="Khống Chế Nhân Tâm [Vô Hạn]" />
-              <p>Khống Chế Nhân Tâm [Vô Hạn]</p>
-            </div>
-            <div class="manga-card">
-              <img
-                src="sk.jpg"
-                alt="Sau Khi Làm Cô Ruột Của Nam Chính Mang Thai"
-              />
-              <p>Sau Khi Làm Cô Ruột Của Nam Chính Mang Thai</p>
-            </div>
-            <div class="manga-card">
-              <img src="tn.jpg" alt="Tiên Nghịch" />
-              <p>Tiên Nghịch</p>
-            </div>
-            <div class="manga-card">
-              <img src="cttktt.jpg" alt="Cố Tiểu Thư Và Khúc Tiểu Thư" />
-              <p>Cố Tiểu Thư Và Khúc Tiểu Thư</p>
-            </div>
-            <div class="manga-card">
-              <img
-                src="cthh.jpg"
-                alt="Chương Trình Hẹn Hò Đổ Vỡ Nhưng Lại Khiến Trai Thẳng Đổ Gục"
-              />
-              <p>Chương Trình Hẹn Hò Đổ Vỡ Nhưng Lại Khiến Trai Thẳng Đổ Gục</p>
-            </div>
-            <div class="manga-card">
-              <img src="lieu.jpg" alt="Liễu" />
-              <p>Liễu</p>
-            </div>
-            <div class="manga-card">
-              <img src="ckc.jpg" alt="Chuyện Kể Của Vô Tận Hồi Quy Giả" />
-              <p>Chuyện Kể Của Vô Tận Hồi Quy Giả</p>
-            </div>
-            <div class="manga-card">
-              <img
-                src="hh.jpg"
-                alt="Hoàng Hậu Trọng Sinh: Sủng Ái Thành Đoàn"
-              />
-              <p>Hoàng Hậu Trọng Sinh: Sủng Ái Thành Đoàn</p>
-            </div>
-            <div class="manga-card">
-              <img src="ahtd.jpg" alt="Ảnh Hậu Thành Đôi" />
-              <p>Ảnh Hậu Thành Đôi</p>
-            </div>
-            <div class="manga-card">
-              <img src="a.jpg" alt="Ariel Dalton muốn được tốt nghiệp!" />
-              <p>Ariel Dalton muốn được tốt nghiệp!</p>
-            </div>
-
-            <!-- Thêm nhiều card khác -->
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
-      <div class="contact">
-        <h2>Thông tin liên lạc</h2>
-        <div class="contactInfo">
-          <div class="contact-left">
-            <p>điện thoại:......</p>
-            <p>điện thoại:......</p>
-            <p>điện thoại:......</p>
-            <p>điện thoại:......</p>
-            <p>điện thoại:......</p>
-          </div>
-
-          <div class="contact-left">
-            <p>điện thoại:......</p>
-            <p>điện thoại:......</p>
-            <p>điện thoại:......</p>
-            <p>điện thoại:......</p>
-            <p>điện thoại:......</p>
-          </div>
-        </div>
-      </div>
+      <iframe
+        src="trangchu.html"
+        style="width: 100%; height: 600px; border: none"
+      ></iframe>
     </div>
   </body>
 </html>
