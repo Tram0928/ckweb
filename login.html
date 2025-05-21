@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Netflix</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="logo">ANIME</div>
+    <div class="login-container">
+        <h1>Đăng nhập</h1>
+        <div class="input-group">
+            <label for="email">Email hoặc số điện thoại đăng</label>
+            <input type="text" id="email" placeholder="Email hoặc số điện thoại">
+        </div>
+        <div class="input-group">
+            <label for="password">Mật khẩu</label>
+            <input type="password" id="password" placeholder="Mật khẩu">
+        </div>
+        <button class="login-btn" onclick="handleLogin()">Đăng nhập</button>
+        <div class="options">
+            <label>
+                <input type="checkbox" id="remember"> Ghi nhớ tôi
+            </label>
+            <a href="#">Bạn quên mật khẩu?</a>
+        </div>
+        <div class="signup">
+            <p>Bạn mới sử dụng Netflix? <a href="#">Đăng ký ngay.</a></p>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (!email || !password) {
+                alert('Vui lòng nhập email/số điện thoại và mật khẩu.');
+                return;
+            }
+
+            alert('Đăng nhập thành công!');
+        }
+    </script>
+</body>
+</html>
