@@ -71,6 +71,11 @@ window.addEventListener("DOMContentLoaded", () => {
     backgroundColor: 0x0, // hoặc xóa dòng này nếu muốn nền trong suốt
   });
 });
+
+function resizeIframe(iframe) {
+  iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+}
+
 /*
 // Lấy phần tử DOM sau khi DOM đã sẵn sàng
 const header = document.getElementById("movie-header");

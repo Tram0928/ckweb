@@ -3,15 +3,16 @@
   box-sizing: border-box;
   padding: 0;
 }
-
-.container {
+#container {
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  height: auto;
-  width: 100%;
-  flex-wrap: wrap;
+  overflow: hidden; /* ✨ Chặn thanh cuộn */
 }
+
 #bg {
   width: 100%;
   height: 100vh;
@@ -22,6 +23,8 @@
 }
 
 #content {
+  overflow: hidden;
+
   display: flex;
   margin: 0;
   padding: 0;
@@ -29,7 +32,6 @@
   width: 100%;
   flex-wrap: wrap;
   position: relative;
-  margin-top: 100px;
   overflow: auto;
 }
 
@@ -39,7 +41,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 10px;
+  padding-bottom: 10px;
   background-color: transparent;
 }
 
@@ -119,6 +121,10 @@
   justify-content: space-between;
 }
 
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
 .dropdownCountry {
   display: none;
   position: absolute;
@@ -186,8 +192,8 @@
 .type {
   display: flex;
   flex-direction: column;
-  padding: 30px;
-  gap: 10px;
+  padding: 50px;
+  gap: 30px;
   width: 100%;
 }
 
@@ -202,8 +208,8 @@
 .manga-scroll {
   display: flex;
   overflow-x: auto;
-  gap: 12px;
-  padding: 10px;
+  gap: 20px;
+  padding: 20px;
   scroll-behavior: smooth;
   white-space: nowrap;
   -ms-overflow-style: none;
@@ -219,6 +225,7 @@
   width: 200px;
   background: #333;
   color: white;
+
   border-radius: 8px;
   overflow: hidden;
   text-align: center;
@@ -234,6 +241,16 @@
 .manga-card p {
   margin: 8px 0;
   font-size: 14px;
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#findIcon {
+  background: none;
+  border: none;
+  outline: none;
 }
 /*
 * {
@@ -491,7 +508,7 @@ a button input {
 #movie-header {
   width: 100%;
   height: 500px;
-
+  margin: 0;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -519,4 +536,8 @@ a button input {
 
 .description {
   font-size: 1.5em;
+}
+
+.user {
+  width: 30px;
 }
