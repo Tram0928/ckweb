@@ -538,6 +538,8 @@ a button input {
   font-size: 1.5em;
 }
 
-.user {
+#user {
   width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1); /* làm icon thành màu trắng */
 }
