@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hỗ trợ người xem - Anime</title>
+    <link rel="stylesheet" href="support.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="content">
+      <div class="support-container">
+        <h1>Hỗ Trợ Người Xem</h1>
+        <p>
+          Anime luôn sẵn sàng giúp các fan anime! Gửi thắc mắc của bạn qua mẫu
+          dưới đây, chúng tôi sẽ phản hồi trong 24 giờ.
+        </p>
+
+        <form id="support-form">
+          <div class="input-group">
+            <label for="name">* Tên của bạn</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Nhập tên bạn (VD: Naruto Uzumaki)"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="phone">* Số điện thoại của bạn</label>
+            <div class="phone-input">
+              <input
+                type="text"
+                id="phone"
+                placeholder="Nhập số điện thoại (10-11 số)"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="email">* Địa chỉ Email của bạn</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Nhập email (VD: naruto@animeflix.com)"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="issue">* Bạn thắc mắc về vấn đề nào?</label>
+            <select id="issue" required>
+              <option value="" disabled selected>Chọn một vấn đề</option>
+              <option value="account">Tài khoản</option>
+              <option value="subscription">Gói đăng ký</option>
+              <option value="content">Nội dung anime</option>
+              <option value="technical">Lỗi kỹ thuật</option>
+              <option value="other">Khác</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="message">* Nội dung thắc mắc</label>
+            <textarea
+              id="message"
+              placeholder="Mô tả chi tiết vấn đề của bạn (VD: Không xem được tập mới của One Piece)"
+              required
+            ></textarea>
+          </div>
+
+          <div class="input-group">
+            <label for="files"
+              >Đính kèm tệp (tối đa 5 tệp, jpg/jpeg/png/pdf, tối đa 20MB mỗi
+              tệp)</label
+            >
+            <input
+              type="file"
+              id="files"
+              accept=".jpg,.jpeg,.png,.pdf"
+              multiple
+            />
+            <p id="file-count">Đã chọn: 0/5 tệp</p>
+          </div>
+
+          <div class="options">
+            <label>
+              <input type="checkbox" id="agree" required />
+              * Tôi đồng ý với <a href="#">Chính sách bảo mật</a> của Anime và
+              cho phép xử lý dữ liệu cá nhân theo quy định.
+            </label>
+          </div>
+
+          <button type="submit" class="submit-btn">Gửi yêu cầu</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      function validateEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+
+      function validatePhone(phone) {
+        const phoneRegex = /^\d{10,11}$/;
+        return phoneRegex.test(phone);
+      }
+
+      document
+        .getElementById("support-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value.trim();
+          const phone = document.getElementById("phone").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const issue = document.getElementById("issue").value;
+          const message = document.getElementById("message").value.trim();
+          const agree = document.getElementById("agree").checked;
+
+          if (!name) {
+            alert("Bạn chưa nhập tên! Vui lòng nhập tên của bạn.");
+            return;
+          }
+
+          if (!phone) {
+            alert("Bạn chưa nhập số điện thoại! Vui lòng nhập số điện thoại.");
+            return;
+          }
+
+          if (!validatePhone(phone)) {
+            alert("Số điện thoại không hợp lệ! Vui lòng nhập 10-11 số.");
+            return;
+          }
+
+          if (!email) {
+            alert("Bạn chưa nhập email! Vui lòng nhập email của bạn.");
+            return;
+          }
+
+          if (!validateEmail(email)) {
+            alert("Email không hợp lệ! Vui lòng nhập đúng định dạng email.");
+            return;
+          }
+
+          if (!issue) {
+            alert("Bạn chưa chọn vấn đề! Vui lòng chọn một vấn đề cần hỗ trợ.");
+            return;
+          }
+
+          if (!message) {
+            alert(
+              "Bạn chưa nhập nội dung thắc mắc! Vui lòng mô tả vấn đề của bạn."
+            );
+            return;
+          }
+
+          if (!agree) {
+            alert("Bạn chưa đồng ý với Chính sách bảo mật! Vui lòng xác nhận.");
+            return;
+          }
+
+          const files = document.getElementById("files").files;
+          if (files.length > 5) {
+            alert("Bạn đã chọn quá 5 tệp! Vui lòng chọn tối đa 5 tệp.");
+            return;
+          }
+
+          for (let file of files) {
+            if (file.size > 20 * 1024 * 1024) {
+              alert(
+                `Tệp "${file.name}" vượt quá 20MB! Vui lòng chọn tệp nhỏ hơn.`
+              );
+              return;
+            }
+          }
+
+          alert(
+            "Yêu cầu hỗ trợ của bạn đã được gửi thành công! Chúng tôi sẽ phản hồi trong 24 giờ."
+          );
+        });
+
+      document.getElementById("files").addEventListener("change", function () {
+        const fileCount = this.files.length;
+        document.getElementById(
+          "file-count"
+        ).textContent = `Đã chọn: ${fileCount}/5 tệp`;
+      });
+    </script>
+  </body>
+</html>

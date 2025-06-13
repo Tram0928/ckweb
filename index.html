@@ -9,86 +9,88 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.google.com/share?selection.family=Cherry+Bomb+One|Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="ck.js"></script>
   </head>
   <body>
     <div id="container">
       <div class="navbar">
-        <ul class="menu">
-          <li>
-            <img src="361cb70302853ac1bc0e769a231a5953.png" id="imgLogo" />
-          </li>
-          <li><a href="#" onclick="loadPage('trangchu.html')">TRANG CHỦ</a></li>
-          <li class="has-dropdown">
-            THỂ LOẠI <span class="arrow"></span>
-            <div class="dropdown">
-              <div class="column">
-                <a href="#" onclick="loadPage('cotich.html')">Cổ tích</a>
-                <a href="#">Manga</a>
-                <a href="#">Tiểu thuyết</a>
-                <a href="#">Giả tưởng</a>
-              </div>
-              <div class="column">
-                <a href="#">Lịch sử</a>
-                <a href="#">Truyện tranh</a>
-                <a href="#">Hành động</a>
-                <a href="#">Lãng mạn</a>
-              </div>
-              <div class="column">
-                <a href="#">Manhua</a>
-                <a href="#">Truyện cười</a>
-                <a href="#">Kinh dị</a>
-                <a href="#">Truyện buồn</a>
-              </div>
-              <div class="column">
-                <a href="#">Khoa học</a>
-                <a href="#">Truyện ngắn</a>
-                <a href="#">Truyện dài tập</a>
-                <a href="#">Trinh thám</a>
-              </div>
-            </div>
-          </li>
-          <li><a href="#" onclick="loadPage('trangchu.html')">MOVIE</a></li>
+        <div class="navbar-left">
+          <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
 
-          <li class="has-dropdown">
-            QUỐC GIA
-            <span class="arrow"></span>
-            <div class="dropdownCountry">
-              <div class="columnCountry">
-                <a href="#">Việt Nam</a>
-                <a href="#">Nhật Bản</a>
-                <a href="#">Trung Quốc</a>
-                <a href="#">Hàn Quốc</a>
+          <a onclick="loadPage('trangchu.html')" class="logo">Anime</a>
+          <ul class="menu" id="menu">
+            <li>
+              <a href="#start" onclick="loadPage('trangchu.html')">TRANG CHỦ</a>
+            </li>
+            <li class="has-dropdown">
+              <a href="#">THỂ LOẠI</a>
+              <div class="dropdown">
+                <div class="column">
+                  <a href="#" onclick="loadPage('phieuluu.html')"
+                    >Phiêu lưu/ Hành động</a
+                  >
+                  <a href="#" onclick="loadPage('haihuoc.html')">Hài hước</a>
+                  <a href="#" onclick="loadPage('kinhdi.html')">Kinh dị</a>
+                  <a href="#" onclick="loadPage('langman.html')">Lãng mạn</a>
+                </div>
+                <div class="column">
+                  <a href="#" onclick="loadPage('cartoon.html')">Trẻ em</a>
+                  <a href="#" onclick="loadPage('bikich.html')">Bi kịch</a>
+                  <a href="#" onclick="loadPage('trinhtham.html')"
+                    >Trinh thám</a
+                  >
+                  <a href="#" onclick="loadPage('magic.html')">Kỳ ảo</a>
+                </div>
               </div>
-              <div class="columnCountry">
-                <a href="#">Thái Lan</a>
-                <a href="#">Bồ Đào Nha</a>
-                <a href="#">Tây Ban Nha</a>
-                <a href="#">Khác</a>
+            </li>
+            <li><a href="#" onclick="loadPage('trangchu.html')">MOVIE</a></li>
+
+            <li class="has-dropdown">
+              <a href="#">XEM THÊM</a>
+
+              <div class="dropdownCountry">
+                <div class="columnCountry">
+                  <a href="#" onclick="loadPage('gioithieu.html')"
+                    >Giới thiệu</a
+                  >
+                  <a href="#" onclick="loadPage('hotro.html')">Hỗ trợ</a>
+                  <a href="#" onclick="loadContact()">Liên hệ</a>
+                </div>
               </div>
+            </li>
+          </ul>
+          <div class="linear">
+            <div id="accountbutton">
+              <a href="#" onclick="loadPage('login.html')"
+                ><img src="profile-user.png" id="user"
+              /></a>
             </div>
-          </li>
-          <li>
-            <a href="#" onclick="loadPage('login.html')"
-              ><img src="profile-user.png" id="user"
-            /></a>
-          </li>
-          <li>
+
             <div class="findManga">
-              <input type="text" class="inputtext" placeholder="Tìm kiếm..." />
-              <button onclick="searchManga()" id="findIcon">
-                <p>🔍</p>
+              <input type="text" id="inputtext" placeholder="Tìm kiếm..." />
+              <button
+                type="button"
+                onclick="searchAnime(document.getElementById('inputtext').value)"
+                id="findIcon"
+              >
+                <img src="loupe.png" id="imgFind" />
               </button>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
-      <iframe
-        id="myIframe"
-        src="trangchu.html"
-        style="width: 100%; border: none; height: 100vh"
-      ></iframe>
+      <div id="bg"></div>
+      <div id="content"></div>
     </div>
   </body>
 </html>

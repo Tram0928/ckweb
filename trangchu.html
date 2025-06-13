@@ -10,6 +10,14 @@
     <script src="vanta.birds.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.google.com/share?selection.family=Cherry+Bomb+One|Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="ck.js"></script>
@@ -17,130 +25,1130 @@
   <body>
     <div id="bg"></div>
     <div id="content">
-      <div class="header">
+      <div id="start" class="header">
         <div id="movie-header">
-          <div class="overlay">
-            <p class="description" id="movie-desc">PHim : dhsbcgdsvgh</p>
+          <div class="arrow left-arrow" id="prev-btn" onclick="prevMovie()">
+            &#10094;
+          </div>
+          <div class="arrow right-arrow" id="next-btn" onclick="nextMovie()">
+            &#10095;
+          </div>
+          <div class="overlay" onclick="window.location.href='xemphim.html'">
+            <h2 id="movie-title">Tên phim</h2>
+            <p id="movie-desc">Giới thiệu ngắn về phim...</p>
+            <div class="btn-header">
+              <button
+                class="btn-header watch"
+                id="watch-btn"
+                onclick="watchMovie(this)"
+              >
+                <img src="play.png" alt="Xem" class="icon" />
+              </button>
+              <button
+                class="btn-header like"
+                id="like-btn"
+                onclick="toggleLike(this)"
+              >
+                <img src="heart.png" id="like-icon" alt="Like" class="icon" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
       <div class="type">
-        <h2 class="title">Danh sách truyện nổi bật</h2>
-        <div class="manga-scroll">
-          <div class="manga-card">
-            <img src="vuluyendienphong.jpg" alt="Vũ Luyện Điên Phong" />
-            <p>Vũ Luyện Điên Phong</p>
-          </div>
-          <div class="manga-card">
-            <img src="hnhpct.jpg" alt="Hôn Nhân Hạnh Phúc Của Tôi" />
-            <p>Hôn Nhân Hạnh Phúc Của Tôi</p>
-          </div>
-          <div class="manga-card">
+        <h2 class="title">🔥Danh sách series nổi bậc</h2>
+        <div class="anime-scroll">
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
             <img
-              src="td.jpg"
-              alt="Tôi Dựa Vào Làm Ruộng Để Nuôi Sống Toàn Bộ Quân Đoàn"
+              src="https://m.media-amazon.com/images/M/MV5BYWE2NDkyNjktNDA4MC00OTQ0LTg5ZDYtMjZlYmFhY2JjNGFkXkEyXkFqcGc@._V1_.jpg"
             />
-            <p>Tôi Dựa Vào Làm Ruộng Để Nuôi Sống Toàn Bộ Quân Đoàn</p>
+            <p class="name">Doraemon</p>
+            <div class="card-info">
+              <h3 class="anime-title">Doraemon</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Series: 8/12</p>
+                <p class="anime-country">Hài hước/ Phiêu lưu/ Trẻ em</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="manga-card">
-            <img src="kdd.jpg" alt="Khó Dỗ Dành" />
-            <p>Khó Dỗ Dành</p>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img src="conanposter.jpg" />
+            <p class="name">Thám tử lừng danh: Conan</p>
+            <div class="card-info">
+              <h3 class="anime-title">Thám tử lừng danh: Conan</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Tập 1100/?</p>
+                <p class="anime-country">Trinh thám/ Trẻ em</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="manga-card">
-            <img src="vv.jpg" alt="Vưu Vật" />
-            <p>Vưu Vật</p>
-          </div>
-          <div class="manga-card">
-            <img src="dccd.jpg" alt="Điên Cuồng Cướp Đoạt" />
-            <p>Điên Cuồng Cướp Đoạt</p>
-          </div>
-          <div class="manga-card">
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
             <img
-              src="ts.jpg"
-              alt="Trọng Sinh Thành Sủng Vật Của Thái Tử Âm Trầm"
+              src="https://upload.wikimedia.org/wikipedia/vi/c/c7/Naruto_Volume_1_manga_cover.jpg"
             />
-            <p>Trọng Sinh Thành Sủng Vật Của Thái Tử Âm Trầm</p>
+            <p class="name">Naruto</p>
+            <div class="card-info">
+              <h3 class="anime-title">Naruto</h3>
+              <div class="info-p">
+                <p class="anime-episodes">220/?</p>
+                <p class="anime-country">Hành động, phiêu lưu, võ thuật</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="manga-card">
-            <img src="treunham.jpg" alt="Trêu Nhầm" />
-            <p>Trêu Nhầm</p>
-          </div>
-          <div class="manga-card">
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
             <img
-              src="tcv.jpg"
-              alt="Thay Chị Vào Hào Môn, Tôi Được Cưng Chiều Hết Mực [Thập Niên 90]"
+              src="https://m.media-amazon.com/images/M/MV5BMTNjNGU4NTUtYmVjMy00YjRiLTkxMWUtNzZkMDNiYjZhNmViXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
             />
-            <p>
-              Thay Chị Vào Hào Môn, Tôi Được Cưng Chiều Hết Mực [Thập Niên 90]
-            </p>
+            <p class="name">One Piece</p>
+            <div class="card-info">
+              <h3 class="anime-title">One Piece</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Series: 1000/?</p>
+                <p class="anime-country">Hành động, phiêu lưu, võ thuật</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="manga-card">
-            <img src="kc.jpg" alt="Khống Chế Nhân Tâm [Vô Hạn]" />
-            <p>Khống Chế Nhân Tâm [Vô Hạn]</p>
-          </div>
-          <div class="manga-card">
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
             <img
-              src="sk.jpg"
-              alt="Sau Khi Làm Cô Ruột Của Nam Chính Mang Thai"
+              src="https://m.media-amazon.com/images/M/MV5BN2EzYTYyNGUtOTE2ZS00ZTljLWE5M2EtZDViYjhmYzgwNThhXkEyXkFqcGc@._V1_.jpg"
             />
-            <p>Sau Khi Làm Cô Ruột Của Nam Chính Mang Thai</p>
-          </div>
-          <div class="manga-card">
-            <img src="tn.jpg" alt="Tiên Nghịch" />
-            <p>Tiên Nghịch</p>
-          </div>
-          <div class="manga-card">
-            <img src="cttktt.jpg" alt="Cố Tiểu Thư Và Khúc Tiểu Thư" />
-            <p>Cố Tiểu Thư Và Khúc Tiểu Thư</p>
-          </div>
-          <div class="manga-card">
-            <img
-              src="cthh.jpg"
-              alt="Chương Trình Hẹn Hò Đổ Vỡ Nhưng Lại Khiến Trai Thẳng Đổ Gục"
-            />
-            <p>Chương Trình Hẹn Hò Đổ Vỡ Nhưng Lại Khiến Trai Thẳng Đổ Gục</p>
-          </div>
-          <div class="manga-card">
-            <img src="lieu.jpg" alt="Liễu" />
-            <p>Liễu</p>
-          </div>
-          <div class="manga-card">
-            <img src="ckc.jpg" alt="Chuyện Kể Của Vô Tận Hồi Quy Giả" />
-            <p>Chuyện Kể Của Vô Tận Hồi Quy Giả</p>
-          </div>
-          <div class="manga-card">
-            <img src="hh.jpg" alt="Hoàng Hậu Trọng Sinh: Sủng Ái Thành Đoàn" />
-            <p>Hoàng Hậu Trọng Sinh: Sủng Ái Thành Đoàn</p>
-          </div>
-          <div class="manga-card">
-            <img src="ahtd.jpg" alt="Ảnh Hậu Thành Đôi" />
-            <p>Ảnh Hậu Thành Đôi</p>
-          </div>
-          <div class="manga-card">
-            <img src="a.jpg" alt="Ariel Dalton muốn được tốt nghiệp!" />
-            <p>Ariel Dalton muốn được tốt nghiệp!</p>
+            <p class="name">Attack on Titan</p>
+            <div class="card-info">
+              <h3 class="anime-title">Attack on Titan</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Series: 87/?</p>
+                <p class="anime-country">Hành động, phiêu lưu, võ thuật</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!-- Thêm nhiều card khác -->
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BYTgyZDhmMTEtZDFhNi00MTc4LTg3NjUtYWJlNGE5Mzk2NzMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+            />
+            <p class="name">Death Note</p>
+            <div class="card-info">
+              <h3 class="anime-title">Death Note</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Series: 37/37</p>
+                <p class="anime-country">Trinh thám</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img src="https://m.media-amazon.com/images/I/91HDmjBfuxL.jpg" />
+            <p class="name">Fairy Tail</p>
+            <div class="card-info">
+              <h3 class="anime-title">Fairy Tail</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Series: 175/175</p>
+                <p class="anime-country">Hành động/ Phiêu lưu</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="contact">
-        <h2>Thông tin liên lạc</h2>
-        <div class="contactInfo">
-          <div class="contact-left">
-            <p>điện thoại:......</p>
-            <p>điện thoại:......</p>
-            <p>điện thoại:......</p>
-            <p>điện thoại:......</p>
-            <p>điện thoại:......</p>
+      <div class="type">
+        <h2 class="title">Phim lẻ đề xuất</h2>
+        <div class="anime-scroll">
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/vi/thumb/b/b3/Your_Name_novel.jpg/330px-Your_Name_novel.jpg"
+            />
+            <p class="name">Your Name</p>
+            <div class="card-info">
+              <h3 class="anime-title">Your Name</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Tình cảm / Kỳ ảo</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="contact-left">
-            <p>điện thoại:......</p>
-            <p>điện thoại:......</p>
-            <p>điện thoại:......</p>
-            <p>điện thoại:......</p>
-            <p>điện thoại:......</p>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://ih1.redbubble.net/image.1712403298.8226/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
+            />
+            <p class="name">Akita</p>
+            <div class="card-info">
+              <h3 class="anime-title">Akita</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Hành động</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/s/p/spirited-away---poster-01.jpg"
+            />
+            <p class="name">Vùng đất linh hồn</p>
+            <div class="card-info">
+              <h3 class="anime-title">Vùng đất linh hồn</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Phiêu lưu/ Kỳ ảo</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BYzllNGRjYTctY2Q2MS00M2Y3LWE5ZTktODc5ZmMwODE5OTVlXkEyXkFqcGc@._V1_.jpg"
+            />
+            <p class="name">Ghost in the shell</p>
+            <div class="card-info">
+              <h3 class="anime-title">Ghost in the shell</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Hành động</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img src="princessmononoke.jpg" />
+            <p class="name">Mononoke Hime</p>
+            <div class="card-info">
+              <h3 class="anime-title">Mononoke Hime</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Phiêu lưu, kỳ ảo, hành động</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BYWM3MDE3YjEtMzIzZC00ODE5LTgxNTItNmUyMTBkM2M2NmNiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+            />
+            <p class="name">My Neighbor Totoro</p>
+            <div class="card-info">
+              <h3 class="anime-title">My Neighbor Totoro</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Kỳ ảo</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img src="summerwars.jpg" />
+            <p class="name">Summer Wars</p>
+            <div class="card-info">
+              <h3 class="anime-title">Summer Wars</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Hài hước</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img src="howlsmovingcastle.jpg" />
+            <p class="name">Howl’s Moving Castle (Hauru no Ugoku Shiro)</p>
+            <div class="card-info">
+              <h3 class="anime-title">
+                Howl’s Moving Castle (Hauru no Ugoku Shiro)
+              </h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Kỳ ảo/ Tình cảm/ Phiêu lưu</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BMzAwNDIzMzEtZDZkNC00ZDQ4LTk3ZDMtZjVhMTU2YzgzZTZiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+            />
+            <p class="name">Perfect Blue</p>
+            <div class="card-info">
+              <h3 class="anime-title">Perfect Blue</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Kinh dị</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img src="tokyogodfathers.jpg" />
+            <p class="name">Tokyo Godfathers</p>
+            <div class="card-info">
+              <h3 class="anime-title">Tokyo Godfathers</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Hài hước</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/vi/thumb/5/51/Suzume_no_Tojimari.tiff/lossy-page1-1200px-Suzume_no_Tojimari.tiff.jpg"
+            />
+            <p class="name">Suzume (Suzume no Tojimari)</p>
+            <div class="card-info">
+              <h3 class="anime-title">Suzume (Suzume no Tojimari)</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Kỳ ảo/ Hành động/ Tình cảm</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img src="oceanwaves.jpg" />
+            <p class="name">Ocean Waves</p>
+            <div class="card-info">
+              <h3 class="anime-title">Ocean Waves</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Tình cảm</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BZWRlMzFlZTAtNTcwYi00ZmM0LWEyNmItYWRkYzY1ODA4ODEzXkEyXkFqcGc@._V1_.jpg"
+            />
+            <p class="name">Hal</p>
+            <div class="card-info">
+              <h3 class="anime-title">Hal</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Tình cảm</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/a/a7/When_Marnie_Was_There.png"
+            />
+            <p class="name">When Marnie Was There</p>
+            <div class="card-info">
+              <h3 class="anime-title">When Marnie Was There</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Tình cảm</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="type">
+        <h2 class="title">Top trending Janpanese</h2>
+        <div class="anime-scroll">
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img src="kimetsunoyaibainfinitycastle.jpg" />
+            <p class="name">Kimetsu no Yaiba: Infinity Castle</p>
+            <div class="card-info">
+              <h3 class="anime-title">Kimetsu no Yaiba: Infinity Castle</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Sắp chiếu</p>
+                <p class="anime-country">Hành động/ Kỳ ảo</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img src="lookback.jpg" />
+            <p class="name">Look Back</p>
+            <div class="card-info">
+              <h3 class="anime-title">Look Back</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Drama</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/p/o/poster_main_sac_mau_cua_cam_xuc_1_.jpg"
+            />
+            <p class="name">The Colors Within</p>
+            <div class="card-info">
+              <h3 class="anime-title">The Colors Within</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Tình cảm</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://asobisystem.com/wp-content/uploads/2024/12/oshiritantei_movie_kv-1-scaled.jpg"
+            />
+            <p class="name">Butt Detective the Movie: Star and Moon</p>
+            <div class="card-info">
+              <h3 class="anime-title">
+                Butt Detective the Movie: Star and Moon
+              </h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Sắp chiếu</p>
+                <p class="anime-country">Hài hước/ Phiêu lưu/ Trẻ em</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://image.tmdb.org/t/p/original/byaQpxzuzO1PDZ7yvA9zyB7krdn.jpg"
+            />
+            <p class="name">Shin - cậu bé bút chì</p>
+            <div class="card-info">
+              <h3 class="anime-title">Shin - cậu bé bút chì</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Series: 600/?</p>
+                <p class="anime-country">Hài hước/ Phiêu lưu/ Trẻ em</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BZTI4ZGMxN2UtODlkYS00MTBjLWE1YzctYzc3NDViMGI0ZmJmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+            />
+            <p class="name">Frieren: Beyond Journey's End</p>
+            <div class="card-info">
+              <h3 class="anime-title">Frieren: Beyond Journey's End</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Series: 50/?</p>
+                <p class="anime-country">Kỳ ảo/ Phiêu lưu/ Trẻ em</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img src="sololeveling.jpg" />
+            <p class="name">Solo Leveling</p>
+            <div class="card-info">
+              <h3 class="anime-title">Solo Leveling</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Series: 10/?</p>
+                <p class="anime-country">Hành động/ Phiêu lưu/ Trẻ em</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="type">
+        <h2 class="title">Cũ nhưng bất hủ</h2>
+        <div class="anime-scroll">
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img src="spiritedaway.jpeg" />
+            <p class="name">Spirited Away</p>
+            <div class="card-info">
+              <h3 class="anime-title">Spirited Away</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Kỳ ảo/ Phiêu lưu</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://images.photowall.com/products/59561/grave-of-the-fireflies.jpg?h=699&q=85.jpg"
+            />
+            <p class="name">Grave of the Fireflies</p>
+            <div class="card-info">
+              <h3 class="anime-title">Grave of the Fireflies</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Bi kịch</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/4/4e/The_Girl_Who_Leapt_Through_Time_poster.jpg"
+            />
+            <p class="name">The Girl Who Leapt Through Time</p>
+            <div class="card-info">
+              <h3 class="anime-title">The Girl Who Leapt Through Time</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Tình cảm</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img src="https://m.media-amazon.com/images/I/819gbwpjLcL.jpg" />
+            <p class="name">Fullmetal Alchemist: Brotherhood</p>
+            <div class="card-info">
+              <h3 class="anime-title">Fullmetal Alchemist: Brotherhood</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Series: 64/?</p>
+                <p class="anime-country">Bi kịch/ Tình cảm</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BZjQwNDU4ODAtZWU0OC00NTFkLTkxYzktMTY3ZTBhMjZiMTg1XkEyXkFqcGc@._V1_.jpg"
+            />
+            <p class="name">Monster</p>
+            <div class="card-info">
+              <h3 class="anime-title">Monster</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Series: 74/74</p>
+                <p class="anime-country">Phiêu lưu</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="type">
+        <h2 class="title">Dành cho trẻ em</h2>
+        <div class="anime-scroll">
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BYWM3MDE3YjEtMzIzZC00ODE5LTgxNTItNmUyMTBkM2M2NmNiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+            />
+            <p class="name">My Neighbor Totoro</p>
+            <div class="card-info">
+              <h3 class="anime-title">My Neighbor Totoro</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Hài hước/ Kỳ ảo/ Trẻ em</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/vi/b/b0/Stand_by_Me_Doraemon_2_film_poster.jpg"
+            />
+            <p class="name">Doraemon: Stand by Me (1 & 2)</p>
+            <div class="card-info">
+              <h3 class="anime-title">Doraemon: Stand by Me (1 & 2)</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Hài hước/ Cảm động/ Trẻ em</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/0/0c/Crayon_Shin-chan-_Honeymoon_Hurricane_~The_Lost_Hiroshi~.jpg"
+            />
+            <p class="name">Crayon Shin-chan Movie Series</p>
+            <div class="card-info">
+              <h3 class="anime-title">Crayon Shin-chan Movie Series</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Hài hước/ Phiêu lưu/ Trẻ em</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BMjAxMmExNWUtMGZjZi00MjZmLTkxYjYtMDdiMDkzOGU4MDk3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+            />
+            <p class="name">Butt Detective the Movie</p>
+            <div class="card-info">
+              <h3 class="anime-title">Butt Detective the Movie</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Trinh thám/ Trẻ em</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/2/2d/Tamagotchi_-_The_Movie_Coverart.png"
+            />
+            <p class="name">Tamagotchi!</p>
+            <div class="card-info">
+              <h3 class="anime-title">Tamagotchi!</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Series: 100/?</p>
+                <p class="anime-country">Hài hước/ Trẻ em</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BYzgxMzVkMGItMTMxNC00ZWEyLTk4ZGItM2RmMmM3NTRmMDQ0XkEyXkFqcGc@._V1_.jpg"
+            />
+            <p class="name">Ojamajo Doremi</p>
+            <div class="card-info">
+              <h3 class="anime-title">Ojamajo Doremi</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Series: 100/?</p>
+                <p class="anime-country">Trẻ em</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://www.fujitv.com/wp-content/uploads/2018/07/m_15_11.jpg"
+            />
+            <p class="name">Chibi Maruko-chan</p>
+            <div class="card-info">
+              <h3 class="anime-title">Chibi Maruko-chan</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Series: 100/?</p>
+                <p class="anime-country">Hài hước/Trẻ em</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BMzE0ZDU1MzQtNTNlYS00YjNlLWE2ODktZmFmNDYzMTBlZTBmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+            />
+            <p class="name">Pokémon</p>
+            <div class="card-info">
+              <h3 class="anime-title">Pokémon</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Series: 1000/?</p>
+                <p class="anime-country">Hài hước/ Phiêu lưu/ Trẻ em</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="anime-card" onclick="window.location.href='xemphim.html'">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BZDkzMzQ5ZmQtOTA3MC00MjhiLTk5M2UtNzk0MjEzZmVjN2UxXkEyXkFqcGc@._V1_.jpg"
+            />
+            <p class="name">Ponyo on the Cliff by the Sea</p>
+            <div class="card-info">
+              <h3 class="anime-title">Ponyo on the Cliff by the Sea</h3>
+              <div class="info-p">
+                <p class="anime-episodes">Movie: Full</p>
+                <p class="anime-country">Kỳ ảo/ Trẻ em</p>
+                <div class="card-buttons">
+                  <button type="button" class="btn watch">
+                    <img src="play.png" alt="Xem" class="icon" /> Xem
+                  </button>
+                  <button
+                    type="button"
+                    class="btn like"
+                    onclick="event.stopPropagation() ;toggleLike(this)"
+                  >
+                    <img src="heart.png" alt="Like" class="icon" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="end">
+        <div class="contact">
+          <div class="contact1">
+            <div class="qr">
+              <div class="logo">Anime</div>
+              <img src="qr.png" id="qr" />
+              <small>Quét để tải app</small>
+            </div>
+          </div>
+          <div class="contact1">
+            <a href="#" onclick="loadPage('gioithieu.html')">Về chúng tôi</a>
+            <a href="#" onclick="loadPage('hotro.html')">Hỗ trợ</a>
+          </div>
+          <div class="contact1">
+            <h4>Liên lạc</h4>
+            <p>📞 0123 456 789</p>
+            <p>📧 lienhe@gmail.com</p>
+            <div class="social-icons">
+              <p>Theo dõi chúng tôi trên</p>
+              <a href="#"><img src="tiktok.png" alt="TikTok" /></a>
+              <a href="#"><img src="facebook.png" alt="Facebook" /></a>
+              <a href="#"><img src="instagram.png" alt="Instagram" /></a>
+              <a href="#"><img src="youtube.png" alt="YouTube" /></a>
+            </div>
+          </div>
+
+          <div class="contact1">
+            <h4>Địa chỉ trụ sở</h4>
+            <p>🏠 123 Đường ABC, Quận 1, TP. Hồ Chí Minh</p>
           </div>
         </div>
       </div>

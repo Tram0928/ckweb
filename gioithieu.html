@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới thiệu - Anime</title>
+    <link rel="stylesheet" href="gioithieu.css" />
+    <link rel="stylesheet" href="ck.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="content">
+      <section id="home" class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+          <h1>Chào mừng đến với Anime</h1>
+          <p>
+            Khám phá thế giới anime đầy màu sắc với thư viện khổng lồ, chất
+            lượng cao và trải nghiệm xem mượt mà!
+          </p>
+          <a href="trangchu.html" class="cta-btn">Bắt đầu xem ngay</a>
+        </div>
+      </section>
+
+      <section class="features">
+        <h2>Tại sao chọn Anime?</h2>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <h3>Thư viện anime đa dạng</h3>
+            <p>
+              Từ các bộ anime kinh điển đến những tựa mới nhất, Anime có tất cả
+              cho mọi otaku!
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>Chất lượng cao</h3>
+            <p>
+              Xem anime với chất lượng HD, 4K, âm thanh sống động, không giật
+              lag.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>Giao diện thân thiện</h3>
+            <p>
+              Thiết kế hiện đại, dễ sử dụng, phù hợp với mọi thiết bị từ điện
+              thoại đến TV.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>Hỗ trợ 24/7</h3>
+            <p>
+              Đội ngũ hỗ trợ luôn sẵn sàng giải đáp mọi thắc mắc của bạn, bất kể
+              ngày đêm!
+            </p>
+          </div>
+        </div>
+      </section>
+      <div id="end">
+        <div class="contact">
+          <div class="contact1">
+            <div class="qr">
+              <div class="logo">Anime</div>
+              <img src="qr.png" id="qr" />
+              <small>Quét để tải app</small>
+            </div>
+          </div>
+          <div class="contact1">
+            <a href="#" onclick="loadpage('gioithieu.html')">Về chúng tôi</a>
+            <a href="#" onclick="loadpage('hotro.html')">Hỗ trợ</a>
+          </div>
+          <div class="contact1">
+            <h4>Liên lạc</h4>
+            <p>📞 0123 456 789</p>
+            <p>📧 lienhe@gmail.com</p>
+            <div class="social-icons">
+              <p>Theo dõi chúng tôi trên</p>
+              <a href="#"><img src="tiktok.png" alt="TikTok" /></a>
+              <a href="#"><img src="facebook.png" alt="Facebook" /></a>
+              <a href="#"><img src="instagram.png" alt="Instagram" /></a>
+              <a href="#"><img src="youtube.png" alt="YouTube" /></a>
+            </div>
+          </div>
+
+          <div class="contact1">
+            <h4>Địa chỉ trụ sở</h4>
+            <p>🏠 123 Đường ABC, Quận 1, TP. Hồ Chí Minh</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll(".nav-link").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          if (this.getAttribute("href").startsWith("#")) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 60,
+                behavior: "smooth",
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
